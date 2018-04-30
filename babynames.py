@@ -31,7 +31,7 @@ def read_all_names(start,end,gender,datadir):
     the list created for each entry
     >>> name_dict,most_pop,top_10 = read_all_names(1880,2012,'m','names')
     >>> name_dict['Zyden']['intro_year_pop'] #1
-    '7'
+    7
     >>> most_pop[2003]
     'Jacob'
     >>> most_pop[1937]
@@ -63,7 +63,7 @@ def read_all_names(start,end,gender,datadir):
                     if name[0] not in name_dict:
                         name_dict[name[0]] = {}
                         name_dict[name[0]].update({'gender':gender.upper()})
-                        name_dict[name[0]].update({'intro_year_pop':name[pop_index]})
+                        name_dict[name[0]].update({'intro_year_pop':int(name[pop_index])})
                         name_dict[name[0]].update({'intro_year':year})
                         name_dict[name[0]].update({'intro_year_rank':rank})
                         name_dict[name[0]].update({'pops':{year:int(name[pop_index])}})

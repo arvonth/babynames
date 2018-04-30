@@ -30,8 +30,8 @@ def read_all_names(start,end,gender,datadir):
     """read all of the names into list and add the year into
     the list created for each entry
     >>> name_dict,most_pop,top_10 = read_all_names(1880,2012,'m','names')
-    >>> name_dict['Zyden'][intro_year_pop] #1
-    7
+    >>> name_dict['Zyden']['intro_year_pop'] #1
+    '7'
     >>> most_pop[2003]
     'Jacob'
     >>> most_pop[1937]
@@ -39,7 +39,7 @@ def read_all_names(start,end,gender,datadir):
     >>> most_pop[1880]
     'John'
     >>> name_dict,most_pop,top_10 = read_all_names(1990,2012,'m','names')
-    >>> name_dict['Zyden'][pops][2012] #2
+    >>> name_dict['Zyden']['pops'][2012] #2
     5
     >>> top_10[2009]
     ['Jacob', 'Ethan', 'Michael', 'Alexander', 'William', 'Joshua', 'Daniel', 'Jayden', 'Noah', 'Christopher']

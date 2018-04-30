@@ -61,13 +61,13 @@ def read_all_names(start,end,gender,datadir):
                 if name[1].upper() == gender.upper():
                     #first time name appears
                     if name[0] not in name_dict:
-						name_dict[name[0]] = {}
-						name_dict[name[0]].update({'gender':gender.upper()})
-						name_dict[name[0]].update({'intro_year_pop':name[pop_index]})
-						name_dict[name[0]].update({'intro_year':year})
-						name_dict[name[0]].update({'intro_year_rank':rank})
-						name_dict[name[0]].update({'pops':{year:int(name[pop_index])}})
-						name_dict[name[0]].update({'ranks':{year:rank}})
+                        name_dict[name[0]] = {}
+                        name_dict[name[0]].update({'gender':gender.upper()})
+                        name_dict[name[0]].update({'intro_year_pop':name[pop_index]})
+                        name_dict[name[0]].update({'intro_year':year})
+                        name_dict[name[0]].update({'intro_year_rank':rank})
+                        name_dict[name[0]].update({'pops':{year:int(name[pop_index])}})
+                        name_dict[name[0]].update({'ranks':{year:rank}})
                     #every time the name appears
                     name_dict[name[0]]['pops'].update({year:int(name[pop_index])})
                     name_dict[name[0]]['ranks'].update({year:rank})

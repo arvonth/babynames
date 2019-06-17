@@ -29,20 +29,12 @@ def get_tops(name_file,number,gender):
 def read_all_names(start,end,gender,datadir):
     """read all of the names into list and add the year into
     the list created for each entry
-    >>> name_dict,most_pop,top_10 = read_all_names(1880,2012,'m','names')
+    >>> name_dict = read_all_names(1880,2012,'m','names')
     >>> name_dict['Zyden']['intro_year_pop'] #1
     7
-    >>> most_pop['2003']
-    'Jacob'
-    >>> most_pop['1937']
-    'Robert'
-    >>> most_pop['1880']
-    'John'
-    >>> name_dict,most_pop,top_10 = read_all_names(1990,2012,'m','names')
+    >>> name_dict = read_all_names(1990,2012,'m','names')
     >>> name_dict['Zyden']['pops']['2012'] #2
     5
-    >>> top_10['2009']
-    ['Jacob', 'Ethan', 'Michael', 'Alexander', 'William', 'Joshua', 'Daniel', 'Jayden', 'Noah', 'Christopher']
     """
     names = []
     most_pop = {}
@@ -75,16 +67,11 @@ def read_all_names(start,end,gender,datadir):
                     rank = rank + 1
                     year_names.append(name[name_index])
             names.extend(year_names)
-            #output the most popular name in a dictionary with the year as the key
-            most_pop.update({year:year_names[0]})
-            top_names_list = []
-            for i in range(top_number):
-                top_names_list.append(year_names[i])
-            top_names.update({year:top_names_list})
             f.close()
         except IOError:
         	print("{0} not found".format(path))
-    return name_dict,most_pop,top_names
+    return name_dict
+
 
 def graph_name(name_object,name):
     years = []

@@ -52,6 +52,7 @@ def read_all_names(start,end,gender,datadir):
 
     for year in range(start,end+1):
         year_names = []
+        year = str(year)
         try:
             path = r"{0}/yob{1}.txt".format(datadir,year)
             f = open(path)

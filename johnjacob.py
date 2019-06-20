@@ -40,13 +40,13 @@ def JohnJacob(names_dict):
     ax2 = fig.add_subplot(2, 1, 2)
     plt.title('Number of Johns, Jacobs and Masons')
     plt.xlabel('Years')
-    ax1.plot(john_years,john_ranks,'x',label = 'John');
-    ax1.plot(jacob_years,jacob_ranks,'^',label = 'Jacob');
-    ax1.plot(mason_years,mason_ranks,'o',label = 'Mason');
+    ax1.plot(john_years,john_ranks,'x',label = 'John')
+    ax1.plot(jacob_years,jacob_ranks,'^',label = 'Jacob')
+    ax1.plot(mason_years,mason_ranks,'o',label = 'Mason')
     ax1.legend(loc='lower right')
-    ax2.plot(john_years,john_pops,'x',label = 'John');
-    ax2.plot(jacob_years,jacob_pops,'^',label = 'Jacob');
-    ax2.plot(mason_years,mason_pops,'o',label = 'Mason');
+    ax2.plot(john_years,john_pops,'x',label = 'John')
+    ax2.plot(jacob_years,jacob_pops,'^',label = 'Jacob')
+    ax2.plot(mason_years,mason_pops,'o',label = 'Mason')
     ax2.legend()
     plt.show()
 

@@ -37,10 +37,7 @@ def read_all_names(start,end,gender,datadir):
     5
     """
     names = []
-    most_pop = {}
-    top_names = {}
     name_dict = {}
-    top_number = 10
 
     for year in range(start,end+1):
         year_names = []
@@ -74,19 +71,16 @@ def read_all_names(start,end,gender,datadir):
 
 
 def graph_name(name_object,name):
-    years = []
-    pops = []
-    for item in sorted(name_object['pops'].items()):
-        years.append(item[0])
-        pops.append(item[1])
+    name_pops = name_object['pops'].items()
     fig = plt.figure()
     ax1 = fig.add_subplot(1, 1, 1)
+    #ax2 = fig.add_subplot(2, 1, 2)
     title_string = 'Number of '+name+"'s"
     plt.title(title_string)
     plt.xlabel('Year')
     ax1.get_xaxis().get_major_formatter().set_useOffset(False)
-    #ax1.plot(years,pops,'x')
-    ax1.bar(years,pops,align='center')
+    #ax1.plot(*zip(*name_pops),marker='x')
+    ax1.bar(*zip(*name_pops),align='center')
     plt.show()
 
 def name_totals(name_object,name):

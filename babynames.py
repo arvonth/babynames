@@ -72,6 +72,9 @@ def read_all_names(start,end,gender,datadir):
 
 def graph_name(name_object,name):
     name_pops = name_object['pops'].items()
+    name_pops = zip(*name_pops)
+    years = map(int,name_pops[0])
+    pops = name_pops[1]
     fig = plt.figure()
     ax1 = fig.add_subplot(1, 1, 1)
     #ax2 = fig.add_subplot(2, 1, 2)
@@ -79,8 +82,8 @@ def graph_name(name_object,name):
     plt.title(title_string)
     plt.xlabel('Year')
     ax1.get_xaxis().get_major_formatter().set_useOffset(False)
-    #ax1.plot(*zip(*name_pops),marker='x')
-    ax1.bar(*zip(*name_pops),align='center')
+    #ax1.plot(years,pops,marker='x')
+    ax1.bar(years,pops,align='center')
     plt.show()
 
 def name_totals(name_object,name):

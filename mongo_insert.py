@@ -1,9 +1,17 @@
 import pymongo
 from pprint import pprint as pp
 import babynames as bn
+import json
 
-uri = "mongodb://arvont:1234@localhost/?authSource=babynames&authMechanism=SCRAM-SHA-1"
-client = pymongo.MongoClient(uri)
+cred_file = 'secrets.json'
+uri_template = "mongodb://{0}:{1}@localhost/?authSource=babynames&authMechanism=SCRAM-SHA-1"
+with open(cred_file,'r') as fp:
+    creds = json.load(fp)
+user = creds['user']
+pw = creds['pw']
+
+
+client = pymongo.MongoClient(uri_template.format(user,pw))
 print("Connected to Database")
 
 db = client.babynames
